@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+
+<h1>Programa - calcular la tabla de multiplicar</h1>
+
+<script>
+	
+	function saltarLine(){
+
+		document.write("<br> <br> <br>");
+	}
+
+	function imprimir(frase){
+
+		document.write(frase);
+		saltarLine();
+	}
+
+	let numeroDeMiembros = parseInt(prompt("Ingrese la cantidad de miembros de la familia"));
+
+	let cont = 1;
+	let edadDeFamilia = 0;
+
+	while(cont <= numeroDeMiembros){
+		
+		edadDeFamilia += parseInt(prompt("Ingrese la edad de el familiar " + cont))
+
+		cont++;
+	}
+
+	imprimir("La edad media de la familia es " + (edadDeFamilia / numeroDeMiembros));
+
+</script>
