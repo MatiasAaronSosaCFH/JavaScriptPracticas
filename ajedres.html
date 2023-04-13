@@ -1,35 +1,46 @@
 <canvas width="800" height="800"></canvas>
+<button>INICIAR</button>
 
 <script>
 	
 	let pantalla = document.querySelector("canvas");
 	const pincel = pantalla.getContext("2d");
+	let boton = document.querySelector("button");
 
-	pincel.fillStyle = "black";
-	pincel.fillRect(0,0,800,800);
+	
 
-	for(let i = 0; i < 800; i+= 80){
+	boton.onclick = iniciar;
+	
 
-		let cont = 3;
+	function iniciar(){
+
+		var cont = 3;
 		let contVueltas = 80;
+		for(let i = 0; i < 800; i+= 80){
 
-		if(cont % 2 != 0){
+			for(let j = 80; j < 800; j+= 80){
 
-			pincel.fillStyle = "white";
-			pincel.fillRect(i, i, contVueltas, contVueltas);
+				if(cont & 2 != 0){
+
+					pincel.fillStyle = "black";
+					pincel.fillRect(i, j,  80,  80);
+					pincel.strokeStile = "black"
+					pincel.strokeRect(i, j,  80,  80)
+				}
+				else{
+					pincel.fillStyle = "white";
+					pincel.fillRect(i,j, 80, 80);
+					pincel.strokeStile = "black"
+					pincel.strokeRect(i, j,  80,  80)
+				}
+
+				cont++;
+				contVueltas+=80;
+				console.log(cont % 2);
+			}
+			
 		}
 
-		cont++;
-		contVueltas+=80;
-
-		/*for(let j = 80; j < 800; j+=80){
-
-			if(cont % 2 != 0){
-
-				pincel.fillStyle = "white";
-				pincel.fillRect(i, i, j, j);
-			}
-			cont++;
-		}*/
+		
 	}
 </script>

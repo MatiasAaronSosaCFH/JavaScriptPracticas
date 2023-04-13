@@ -1,0 +1,26 @@
+<canvas width="600" height="400"></canvas>
+
+<script>
+	
+	function dibujarCuadradoVerde(i,j){
+
+		let pantalla = document.querySelector("canvas");
+		let pincel = pantalla.getContext("2d");
+
+		pincel.fillStyle = "green";
+		pincel.fillRect(i,j,50,50);
+		pincel.strokeStyle = "black";
+		pincel.strokeRect(i,j,50,50);
+	}
+	
+	dibujarCuadradoVerde(0,0);
+	dibujarCuadradoVerde(50,0);
+	dibujarCuadradoVerde(100,0);
+	dibujarCuadradoVerde(150,0);
+	dibujarCuadradoVerde(200,0);
+	dibujarCuadradoVerde(250,0);
+	dibujarCuadradoVerde(300,0);
+	dibujarCuadradoVerde(350,0);
+
+	
+</script>
